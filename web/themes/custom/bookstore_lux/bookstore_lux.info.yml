@@ -1,0 +1,10 @@
+name: BookStore Lux
+type: theme
+description: Traditional Twig theme preserving the BookStore Bootswatch Lux appearance.
+core_version_requirement: ^11
+base theme: stable9
+libraries: [bookstore_lux/global]
+regions:
+  content: Content
+  header: Header
+  footer: Footer

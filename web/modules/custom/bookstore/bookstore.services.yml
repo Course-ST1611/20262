@@ -1,0 +1,4 @@
+services:
+  bookstore.store:
+    class: Drupal\bookstore\Store
+    arguments: ['@database', '@current_user', '@user.data']

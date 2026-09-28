@@ -1,0 +1,35 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="{{ path('bookstore.home') }}">
+        <img src="{{ bookstore_theme_path }}/images/bookstore-logo.svg" height="32" alt="BookStore Co."><span>BookStore Co.</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bookstore-nav" aria-controls="bookstore-nav" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="bookstore-nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          {% if bookstore_customer %}
+            <li class="nav-item"><a class="nav-link" href="{{ path('bookstore.cart') }}">Carrito{% if bookstore_cart_count %} <span class="badge bg-secondary rounded-pill">{{ bookstore_cart_count }}</span>{% endif %}</a></li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" id="bookstore-account-menu" data-bs-toggle="dropdown" aria-expanded="false">{{ bookstore_customer.first_name }}</button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bookstore-account-menu">
+                <li><a class="dropdown-item" href="{{ path('bookstore.profile') }}">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="{{ path('bookstore.orders') }}">Mis compras</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{ path('user.logout') }}">Cerrar sesión</a></li>
+              </ul>
+            </li>
+          {% else %}
+            <li class="nav-item"><a class="nav-link" href="{{ path('bookstore.login') }}">Iniciar sesión</a></li>
+          {% endif %}
+          <li class="nav-item"><a class="nav-link" href="{{ path('bookstore.stores') }}">Tiendas</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main class="py-3"><div class="container">
+  {{ page.highlighted }}
+  {{ page.help }}
+  {{ page.content }}
+</div></main>
+<footer class="container text-center py-3">Copyright © 1995 - 2026 BookStore Co. Booksellers</footer>

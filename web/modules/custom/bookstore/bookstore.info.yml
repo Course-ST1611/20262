@@ -1,0 +1,5 @@
+name: BookStore
+package: Custom
+type: module
+description: Traditional Drupal storefront backed by the existing BookStore PostgreSQL tables.
+core_version_requirement: ^11

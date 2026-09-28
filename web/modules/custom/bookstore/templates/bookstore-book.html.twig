@@ -1,0 +1,6 @@
+<p><a class="btn btn-light" href="{{ path('bookstore.home') }}">← Regresar al catálogo</a></p>
+<div class="row">
+  <div class="col-md-4"><img class="bookstore-cover" src="{{ book.image_url }}" alt="Portada de {{ book.title }}"></div>
+  <div class="col-md-4"><div class="list-group list-group-flush"><div class="list-group-item"><h1 class="h3">{{ book.title }}</h1></div><div class="list-group-item">Autor: {{ book.author }}</div><div class="list-group-item">Descripción: {{ book.description }}</div><div class="list-group-item">ISBN: {{ book.isbn }}</div></div></div>
+  <div class="col-md-3"><div class="list-group list-group-flush"><div class="list-group-item">Estado: {{ book.stock > 0 ? 'Disponible' : 'No disponible' }} ({{ book.stock }}) uds</div><div class="list-group-item"><strong>Precio:</strong> ${{ book.price_display }}</div><div class="list-group-item">{% if form %}{{ form }}{% else %}<a href="{{ path('bookstore.login', {}, {'query': {'destination': path('bookstore.book', {'isbn': book.isbn})}}) }}">Inicia sesión para comprar</a>{% endif %}</div></div></div>
+</div>

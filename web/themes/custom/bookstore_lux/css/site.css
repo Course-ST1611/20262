@@ -1,0 +1,19 @@
+main { min-height: 85vh; }
+html, body { width: 100%; overflow-x: hidden; }
+.bookstore-carousel .carousel-item { height: 500px; }
+.bookstore-carousel img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.book-card { transition: transform .2s; }
+.book-card:hover { transform: translateY(-3px); }
+.book-card img { height: 250px; object-fit: cover; }
+.bookstore-cover { max-width: 100%; max-height: 440px; object-fit: contain; }
+.bookstore-store-banner { width: 100%; max-height: 360px; object-fit: cover; }
+
+.bookstore-login { min-height: 70vh; padding: 2rem 0; }
+.bookstore-login-card { width: min(100%, 25rem); }
+.bookstore-login-card .form-item { margin-bottom: 1rem; }
+
+.bookstore-cart-item-form { display: flex; align-items: center; gap: .5rem; flex-wrap: nowrap; }
+.bookstore-cart-item-form .form-item { margin: 0; flex: 0 0 4.25rem; }
+.bookstore-cart-item-form input[type="number"] { width: 4.25rem; }
+.bookstore-cart-item-form .form-actions { display: flex; align-items: center; gap: .5rem; margin: 0; }
+.bookstore-cart-item-form .button { margin: 0; }

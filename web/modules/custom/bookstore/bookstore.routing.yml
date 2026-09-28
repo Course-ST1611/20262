@@ -1,0 +1,44 @@
+bookstore.home:
+  path: '/catalog'
+  defaults: { _controller: '\Drupal\bookstore\Controller\StoreController::home', _title: 'BookStore Co.' }
+  requirements: { _access: 'TRUE' }
+bookstore.stores:
+  path: '/stores'
+  defaults: { _controller: '\Drupal\bookstore\Controller\StoreController::stores', _title: 'Nuestras tiendas' }
+  requirements: { _access: 'TRUE' }
+bookstore.book:
+  path: '/book/{isbn}'
+  defaults: { _controller: '\Drupal\bookstore\Controller\StoreController::book', _title: 'Libro' }
+  requirements: { _access: 'TRUE' }
+bookstore.login:
+  path: '/login'
+  defaults: { _form: '\Drupal\bookstore\Form\CustomerLoginForm', _title: 'Iniciar sesión' }
+  requirements: { _access: 'TRUE' }
+bookstore.profile:
+  path: '/profile'
+  defaults: { _controller: '\Drupal\bookstore\Controller\StoreController::profile', _title: 'Mi perfil' }
+  requirements: { _user_is_logged_in: 'TRUE' }
+bookstore.cart:
+  path: '/cart'
+  defaults: { _controller: '\Drupal\bookstore\Controller\StoreController::cart', _title: 'Carrito de compras' }
+  requirements: { _user_is_logged_in: 'TRUE' }
+bookstore.cart_add:
+  path: '/cart/add/{isbn}'
+  defaults: { _form: '\Drupal\bookstore\Form\AddToCartForm', _title: 'Agregar al carrito' }
+  requirements: { _user_is_logged_in: 'TRUE' }
+bookstore.cart_update:
+  path: '/cart/update/{isbn}'
+  defaults: { _form: '\Drupal\bookstore\Form\CartItemForm', _title: 'Modificar carrito' }
+  requirements: { _user_is_logged_in: 'TRUE' }
+bookstore.checkout:
+  path: '/checkout'
+  defaults: { _form: '\Drupal\bookstore\Form\CheckoutForm', _title: 'Finalizar compra' }
+  requirements: { _user_is_logged_in: 'TRUE' }
+bookstore.orders:
+  path: '/orders'
+  defaults: { _controller: '\Drupal\bookstore\Controller\StoreController::orders', _title: 'Mis compras' }
+  requirements: { _user_is_logged_in: 'TRUE' }
+bookstore.success:
+  path: '/orders/{order_id}/success'
+  defaults: { _controller: '\Drupal\bookstore\Controller\StoreController::success', _title: 'Compra realizada' }
+  requirements: { _user_is_logged_in: 'TRUE' }

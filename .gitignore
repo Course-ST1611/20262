@@ -1,0 +1,23 @@
+# Base de datos
+/database/
+
+# Docker
+/docker/
+/Dockerfile
+/compose.yaml
+/compose.yml
+/docker-compose.yml
+/docker-compose.yaml
+
+# Variables y credenciales
+/.env
+/.env.*
+
+# Archivos locales o generados
+*.zip
+.DS_Store
+
+# Si posteriormente se instala Drupal completo en este mismo repositorio
+/vendor/
+/web/sites/default/settings.php
+/web/sites/default/files/

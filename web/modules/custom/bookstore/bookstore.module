@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Theme registrations for the BookStore storefront.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function bookstore_theme($existing, $type, $theme, $path): array {
+  return [
+    'bookstore_home' => ['variables' => ['books' => [], 'theme_path' => '']],
+    'bookstore_book' => ['variables' => ['book' => [], 'theme_path' => '', 'form' => NULL]],
+    'bookstore_stores' => ['variables' => ['stores' => [], 'theme_path' => '']],
+    'bookstore_profile' => ['variables' => ['customer' => []]],
+    'bookstore_cart' => ['variables' => ['items' => [], 'subtotal' => '', 'count' => 0, 'checkout' => NULL]],
+    'bookstore_orders' => ['variables' => ['orders' => []]],
+    'bookstore_success' => ['variables' => ['order' => []]],
+  ];
+}

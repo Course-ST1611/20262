@@ -1,0 +1,8 @@
+<?php
+
+/** Implements hook_preprocess_page(). */
+function bookstore_lux_preprocess_page(array &$variables): void {
+  $variables['bookstore_theme_path'] = base_path() . \Drupal::service('extension.list.theme')->getPath('bookstore_lux');
+  $variables['bookstore_customer'] = \Drupal::moduleHandler()->moduleExists('bookstore') ? \Drupal::service('bookstore.store')->currentCustomer() : NULL;
+  $variables['bookstore_cart_count'] = array_sum(\Drupal::request()->getSession()->get('bookstore.cart', []));
+}
